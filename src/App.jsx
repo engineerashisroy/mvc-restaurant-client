@@ -4,7 +4,7 @@ import PrivateRoute from "./pages/Routes/PrivateRoute";
 import Home from "./pages/Home/Home/Home";
 import Navbar from "./pages/Shared/Navbar";
 import Footer from "./pages/Shared/Footer";
-import Contact from "./pages/Contact/Contact/Contact";
+
 import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
 import OurMenu from "./pages/OurMenu/OurMenu/OurMenu";
 import Order from "./pages/Order/Order/Order";
@@ -16,6 +16,8 @@ import MyReviews from "./pages/Dashboard/user/MyReviews/MyReviews";
 import MyBookings from "./pages/Dashboard/user/MyBookings/MyBookings";
 import AllUsers from "./pages/Dashboard/admin/AllUsers";
 import Reservation from "./pages/Dashboard/user/Reservation/Reservation";
+import Contact from "./pages/Contact/Contact";
+import AddItem from "./pages/Dashboard/admin/AddItem";
 
 function App() {
   const location = useLocation();
@@ -29,21 +31,13 @@ function App() {
       {noHeaderFooter || <Navbar></Navbar>}
       <Routes>
         <Route index element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<Contact/>} />
         <Route path="/our-menu" element={<OurMenu />} />
         <Route path="/order" element={<Order></Order>} />
         <Route path="/order/:category" element={<Order></Order>} />
         <Route path="/login" element={<Login></Login>} />
         <Route path="/signup" element={<SignUp></SignUp>} />
-        {/* <Route
-          path="/dashboard"
-          element={
-            <PrivateRoute>
-              <Dashboard></Dashboard>
-            </PrivateRoute>
-          }
-        /> */}
-        {/* demon route  */}
+        
         <Route
           path="dashboard"
           element={
@@ -60,6 +54,7 @@ function App() {
 
           {/* admin route  */}
           <Route path="users" element={<AllUsers />} />
+          <Route path="add-item" element={<AddItem></AddItem>} />
         </Route>
 
         <Route

@@ -15,6 +15,7 @@ import { RiShoppingCart2Line } from "react-icons/ri";
 import { Link, Outlet } from "react-router-dom";
 import useCart from "../../../hooks/useCart";
 import useAdmin from "../../../hooks/useAdmin";
+
 const Dashboard = () => {
   const [cart, refetch] = useCart();
 
@@ -29,7 +30,7 @@ const Dashboard = () => {
       </Helmet>
 
       <div className="flex">
-        <h2>Part One</h2>
+       
         <div className="w-64 h-screen bg-yellow-100">
           <ul className="menu bg-base-200 w-full rounded-box">
             {isAdmin ? (
@@ -41,7 +42,7 @@ const Dashboard = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="">
+                  <Link to="add-item">
                     <FaUtensils />
                     Add Items
                   </Link>
@@ -99,6 +100,7 @@ const Dashboard = () => {
                     My Bookings
                   </Link>
                 </li>
+                
               </>
             )}
             {/* shared nav link  */}
@@ -124,7 +126,7 @@ const Dashboard = () => {
           </ul>
         </div>
         <div className="flex-1">
-          <h3>Part two</h3>
+         
           <Outlet />
         </div>
       </div>

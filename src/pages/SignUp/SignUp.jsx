@@ -29,9 +29,10 @@ const SignUp = () => {
           const userInfo = {
             name: data.name,
             email: data.email,
+            password: data.password,
           };
           //create user entry in the database
-          axiosPublic.post("api/v1/users", userInfo).then((res) => {
+          axiosPublic.post("/api/v1/signup", userInfo).then((res) => {
             if (res.data) {
               console.log("User added to the database");
               reset();
@@ -42,7 +43,7 @@ const SignUp = () => {
                 showConfirmButton: false,
                 timer: 1500,
               });
-              navigate("/");
+              navigate("/login");
             }
           });
         })
@@ -84,7 +85,7 @@ const SignUp = () => {
                 <span className="text-red-700">Name is required</span>
               )}
             </p>
-            <div className="form-control">
+            {/* <div className="form-control">
               <label className="label">
                 <span className="label-text">Photo Url</span>
               </label>
@@ -95,7 +96,7 @@ const SignUp = () => {
                 className="input input-bordered"
                 required
               />
-            </div>
+            </div> */}
             <p>
               {errors.photoURL && (
                 <span className="text-red-700">photoURL is required</span>

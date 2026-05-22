@@ -5,7 +5,7 @@ const MenuItem = ({ item }) => {
   const { image, name, price, recipe, category } = item;
   return (
     <div>
-      <div className="flex space-x-3 my-6">
+      <div className="flex space-x-3 my-6 bg-red-500">
         <div>
           <img
             src={image}
