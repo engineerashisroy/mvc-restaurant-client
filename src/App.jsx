@@ -18,6 +18,7 @@ import AllUsers from "./pages/Dashboard/admin/AllUsers";
 import Reservation from "./pages/Dashboard/user/Reservation/Reservation";
 import Contact from "./pages/Contact/Contact";
 import AddItem from "./pages/Dashboard/admin/AddItem";
+import MenuItemList from "./pages/Dashboard/admin/MenuItemList";
 
 function App() {
   const location = useLocation();
@@ -55,6 +56,7 @@ function App() {
           {/* admin route  */}
           <Route path="users" element={<AllUsers />} />
           <Route path="add-item" element={<AddItem></AddItem>} />
+          <Route path="menu-item-list" element={<MenuItemList></MenuItemList>} />
         </Route>
 
         <Route
